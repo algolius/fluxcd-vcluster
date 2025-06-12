@@ -45,7 +45,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/monitoring/controllers
+  path: ./infrastructure/addons
   prune: true
   wait: true
   dependsOn:
