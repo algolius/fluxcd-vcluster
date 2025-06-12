@@ -65,21 +65,21 @@ spec:
   dependsOn:
     - name: infra-addons
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: ceph-cluster
-  namespace: flux-system
-spec:
-  interval: 10m
-  path: ./infrastructure/rook-ceph/cephcluster
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  dependsOn:
-    - name: rook-ceph
-  targetNamespace: rook-ceph
-  wait: true
-  timeout: 5m
-  retryInterval: 1m
+#apiVersion: kustomize.toolkit.fluxcd.io/v1
+#kind: Kustomization
+#metadata:
+ # name: ceph-cluster
+  #namespace: flux-system
+#spec:
+ # interval: 10m
+  #path: ./infrastructure/rook-ceph/cephcluster
+  #prune: true
+  #sourceRef:
+   # kind: GitRepository
+    #name: flux-system
+  #dependsOn:
+   # - name: rook-ceph
+  #targetNamespace: rook-ceph
+  #wait: true
+  #timeout: 5m
+  #retryInterval: 1m
