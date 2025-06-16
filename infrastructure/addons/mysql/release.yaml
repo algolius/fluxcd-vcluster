@@ -1,0 +1,52 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mysql
+  namespace: mysql
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: mysql
+      version: "9.x.x"
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: mysql
+  install:
+    createNamespace: false
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    auth:
+      rootPassword: "123*321"  
+      database: "mybase"
+      username: "osm"
+      password: "123321"   
+    
+    primary:
+      persistence:
+        enabled: true
+        size: 10Gi
+        storageClass: ""  
+      
+      resources:
+        limits:
+          memory: 1Gi
+          cpu: 500m
+        requests:
+          memory: 512Mi
+          cpu: 250m
+    
+    metrics:
+      enabled: true
+      
+    # Configuración de red
+    primary:
+      service:
+        type: ClusterIP
+        ports:
+          mysql: 3306
