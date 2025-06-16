@@ -25,14 +25,12 @@ spec:
       rootPassword: "123*321"  
       database: "mybase"
       username: "user"
-      password: "123321"    
-    
+      password: "123321"     
     primary:
       persistence:
         enabled: true
         size: 10Gi
         storageClass: ""
-      
       resources:
         limits:
           memory: 1Gi
@@ -40,11 +38,9 @@ spec:
         requests:
           memory: 512Mi
           cpu: 250m
-      
       service:
         type: ClusterIP
         ports:
           mysql: 3306
-    
     metrics:
       enabled: true
