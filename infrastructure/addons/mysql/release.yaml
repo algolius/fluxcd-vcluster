@@ -24,14 +24,14 @@ spec:
     auth:
       rootPassword: "123*321"  
       database: "mybase"
-      username: "osm"
-      password: "123321"   
+      username: "user"
+      password: "123321"    
     
     primary:
       persistence:
         enabled: true
         size: 10Gi
-        storageClass: ""  
+        storageClass: ""
       
       resources:
         limits:
@@ -40,13 +40,11 @@ spec:
         requests:
           memory: 512Mi
           cpu: 250m
-    
-    metrics:
-      enabled: true
       
-    # Configuración de red
-    primary:
       service:
         type: ClusterIP
         ports:
           mysql: 3306
+    
+    metrics:
+      enabled: true
