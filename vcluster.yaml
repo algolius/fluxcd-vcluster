@@ -1,0 +1,13 @@
+sync:
+  fromHost:
+    # Habilitar sincronización de StorageClasses
+    storageClasses:
+      enabled: true
+      # Sincronizar todas las StorageClasses
+      all: true
+      
+    # Opcional: También sincronizar otros recursos útiles
+    nodes:
+      enabled: true
+      # Sincronizar información de nodos para mejor schedulling
+      syncAllNodes: true

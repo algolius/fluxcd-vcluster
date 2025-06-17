@@ -31,6 +31,9 @@ spec:
         enabled: true
         size: 10Gi
         storageClass: ""
+        accessModes:
+          - ReadWriteOnce
+        annotations: {}
       resources:
         limits:
           memory: 1Gi
